@@ -1,5 +1,3 @@
-window.addEventListener("DOMContentLoaded", function(){
-    
 function exercice1()
 {
     let button = document.getElementById("btn-change-color");
@@ -9,7 +7,6 @@ function exercice1()
     });
 }
 
-exercice1()
 
 function exercice2()
 {
@@ -20,17 +17,12 @@ function exercice2()
     });
 }
 
-exercice2()
 
 function exercice3()
 {
     let ingredients = ["Salade", "Tomate", "Oignon"];
     let button = document.getElementById("btn-add-ingredients");
     let ul = document.querySelector("ul");
-
-    
-
-
 
     button.addEventListener("click", function(event){
         for (ingredient of ingredients){
@@ -42,7 +34,6 @@ function exercice3()
     });
 }
 
-exercice3()
 
 function exercice4()
 {
@@ -60,16 +51,79 @@ function exercice4()
             secret: "Iron Man"
         }
     ];
+    
+
+    let tbody = document.querySelector("tbody");
+    let button = document.getElementById("btn-add-hero");
+    
+    let i = 0
+    
+    button.addEventListener("click", function(event){
+        
+       
+        
+        if (i < heroes.length){
+            
+            let tr = document.createElement("tr");
+            tbody.appendChild(tr);
+            
+            let td1 = document.createElement("td");
+            let td2 = document.createElement("td");
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            
+            let name = document.createTextNode(heroes[i].name);
+            let secret = document.createTextNode(heroes[i].secret);
+            td1.appendChild(name);
+            td2.appendChild(secret)
+            
+            i = i + 1;
+            console.log(i)
+        }
+        
+    });
+
 }
+
 
 function exercice5()
 {
 
+    let case1 = document.getElementById("blue");
+    let case2 = document.getElementById("red");
+    let case3 = document.getElementById("green");
+    
+    let button = document.getElementById("btn-turn");
+
+    button.addEventListener("click", function(event){
+        case1.id = "red";
+        case2.id = "green";
+        case3.id = "blue";
+    });
 }
+
 
 function exercice6()
 {
-
+    let ball = document.getElementById("ball");
+    let button = document.getElementById("btn-roll");
+    
+    button.addEventListener("click", function(event){
+       ball.classList.add("roll")
+       console.log("coucou")
+       
+        
+    });
+    
 }
+
+window.addEventListener("DOMContentLoaded", function(){
+
+    exercice1();
+    exercice2();
+    exercice3();
+    exercice4();
+    exercice5();
+    exercice6();
 
 });
